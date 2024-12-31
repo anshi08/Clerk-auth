@@ -14,7 +14,7 @@ const ProtectedRoute = ({ children }) => {
       {/* Render children if the user is signed in */}
       <SignedIn>
         {children}
-        <button onClick={handleSignOut}>Sign Out</button>
+        <button onClick={handleSignOut} className="bg-red-300 p-2 m-2 mx-3 rounded-lg">Sign Out</button>
       </SignedIn>
       
       {/* Redirect to sign-in if the user is signed out */}

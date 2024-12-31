@@ -2,7 +2,6 @@ import React from "react";
 import { SignedIn, SignedOut, RedirectToSignIn, useClerk } from "@clerk/clerk-react";
 
 const ProtectedRoute = ({ children }) => {
-  // Using the useClerk hook to get the signOut method
   const { signOut } = useClerk();
 
   // sign out button

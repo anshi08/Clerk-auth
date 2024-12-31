@@ -2,23 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { useUser, RedirectToSignIn } from '@clerk/clerk-react';
 
 const ProtectedPage = () => {
-  // Using the useUser hook from Clerk
+
   const { isSignedIn, isLoaded } = useUser();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Log the values of isLoaded and isSignedIn
-    console.log('isLoaded:', isLoaded);
-    console.log('isSignedIn:', isSignedIn);
+    // console.log('isLoaded:', isLoaded);
+    // console.log('isSignedIn:', isSignedIn);
 
-    // Wait until Clerk session is fully loaded
+    //wait for session loaded
     if (isLoaded) {
       setLoading(false);
     }
-  }, [isLoaded, isSignedIn]); // Adding isSignedIn to the dependency array
+  }, [isLoaded, isSignedIn]); 
 
   if (loading) {
-    // Display loading message while Clerk is loading session info
+    
     return <div>Loading...</div>;
   }
 
@@ -29,7 +28,6 @@ const ProtectedPage = () => {
 
   return (
     <div>
-      {/* Display protected content */}
       Welcome to the protected page, you are logged in!
     </div>
   );
